@@ -1,0 +1,110 @@
+<section id="section-job">
+    <form action="/jobs/create" method="POST" id="user-form" class="card">
+      <h1>Post a new job</h1>
+      <div class="row">
+        <div class="col-sm-4">
+      <label for="inputTitle">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="inputTitle"
+        placeholder="Title"
+        autofocus
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputComapny">Company</label>
+      <input
+        type="text"
+        name="company"
+        id="inputCompany"
+        placeholder="Company"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputLocation">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="inputLocation"
+        placeholder="Location"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputSalary">Salary</label>
+      <input
+        type="number"
+        name="salary"
+        id="inputSalary"
+        placeholder="Salary"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputContactPhone">Contact Phone</label>
+      <input
+        type="text"
+        name="contactPhone"
+        id="inputContactPhone"
+        placeholder="Job"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputContactEmail">Contact Email</label>
+      <input
+        type="text"
+        name="contactEmail"
+        id="inputCompany"
+        placeholder="Company"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputPostDate">Post Date</label>
+      <input
+        type="date"
+        name="postDate"
+        id="inputPostDate"
+        placeholder="Post Date"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputDeadlineDate">Deadline Date</label>
+      <input
+        type="date"
+        name="deadlineDate"
+        id="inputDeadLineDate"
+        placeholder="Deadline Date"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputIsActive">Is Active</label>
+    </br>
+      <select name="isActive">
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    </div>
+    <label for="inputDescription">Description</label>
+      <textarea
+        type="text"
+        name="description"
+        id="inputDescription"
+        placeholder="Description"
+        required
+      ></textarea>
+      <label for="inputRequirements">Requirements</label>
+      <textarea
+        type="text"
+        name="requirements"
+        id="inputRequirements"
+        required
+      ></textarea>
+      </div>
+    </br>
+      <div class="justify-content-center"><input type="submit" value="Submit"></input></div>
+    </form>
+</section>
+  

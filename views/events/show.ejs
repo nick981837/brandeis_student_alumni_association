@@ -1,0 +1,29 @@
+<section id="section-event">
+    <div class="card" id="user-form">
+       <a href="<%= `/events/${event._id}`%>"><h2><%= event.title %></h2></a>
+            <h5><%= event.location %></h5>
+            <h5>Description: <%= event.description %></h5>
+            <h5>Start Date: <%= event.startDate.toISOString().slice(0, 10) %></h5>
+            <h5>End Date: <%= event.endDate.toISOString().slice(0, 10) %></h5>
+            <% if(event.isOnline){ %>
+                <h5>Is Online: Yes</h5>
+              <% } else{ %>  
+                <h5>Is Online: No</h5>
+             <% } %>
+            <% if (event.organizer) {%>
+                <h5>Organizer: <a href="<%=`/users/${event.organizer._id}`%>" style="display: inline;margin-top: 0px;"><%= event.organizer.name %></h5></a>
+            <%} %>
+            <h5>Attendees:<% for (var i =0; i < event.attendees.length;  i++ ) { %>
+                <% name = event.attendees[i].name %>
+                <br/>
+                <a href="<%=`/users/${event.attendees[i]._id}`%>" style="display: inline;margin-top: 0px;"><%=  name %></a>
+                <% } %></h5>
+                <a href="`<%= event.registrationLink %>`"><%= event.registrationLink %></a>
+            <div class="btn-group justify-content-center" role="group">
+                <div><a href="<%=`/events/${event._id}/register?_method=PUT` %>" class="button">Register</a></div>
+                <div><a href="<%=`/events/${event._id}/edit` %>" class="button">Edit</a></div>
+                <div><a href="<%=`/events/${event._id}/delete?_method=DELETE` %>" class="button" onclick="return confirm('Are you sure you want to delete this event?')">Delete</a></div>
+            </div>
+    </div>
+</section>
+

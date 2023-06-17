@@ -1,0 +1,72 @@
+<section id="section-event">
+    <form method="POST" action="<%=`/events/${event._id}/update?_method=PUT`%>" id="user-form" class="card">
+      <h1>Edit</h1>
+      <label for="inputTitle">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="inputTitle"
+        placeholder="Title"
+        value="<%= event.title %>"
+        autofocus
+        required
+      />
+      <label for="inputDescription">Description</label>
+      <input
+        type="text"
+        name="description"
+        id="inputDescription"
+        value="<%= event.description %>"
+        placeholder="Description"
+        required
+      />
+      <label for="inputLocation">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="inputLocation"
+        value="<%= event.location %>"
+        placeholder="Location"
+        required
+      />
+      <label for="inputStartDate">Start Date</label>
+      <input
+        type="date"
+        name="startDate"
+        value="<%= event.startDate.toISOString().slice(0, 10) %>"
+        id="inputStartDate"
+        required
+      />
+      <label for="inputEndDate">End Date</label>
+      <input
+        type="date"
+        name="endDate"
+        id="inputEndDate"
+        value="<%= event.endDate.toISOString().slice(0, 10) %>"
+        placeholder="End Date"
+        required
+      />
+      <label for="inputIsOnline">Is Online</label>
+      <select name="isOnline">
+        <% if(event.isOnline){ %>
+          <option value="true" selected="selected">Yes</option>
+        <option value="false">No</option>
+        <% } else{ %>  
+          <option value="true">Yes</option>
+        <option value="false" selected="selected">No</option>
+       <% } %>
+    </select>
+    <label for="inputRegistrationLink">Registration Link</label>
+      <input
+        type="text"
+        name="registrationLink"
+        id="inputRegistrationLink"
+        value="<%= event.registrationLink %>"
+        placeholder="Registration Link"
+      />
+</br>
+<div class="justify-content-center"><input type="submit" value="Update"></input></div>
+    </form>
+</div>
+</section>
+  

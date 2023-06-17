@@ -1,0 +1,27 @@
+<section id="section-event">
+  <div id="section-title"><%=title%>:</div>
+  <div class="card">
+    <span id="section-subTitle-second"> Students & Alumni of Brandeis University</span>
+    <p>Our events cover a range of topics and formats, from professional development workshops and networking mixers to community service projects and social events. We're committed to providing a diverse and engaging set of events that meet the needs and interests of our members.</p>
+    <div><a href="events/new" class="button">Post a new Event</a></div>
+    <br/>
+    <% events.forEach(event => { %>
+      <li class="section-list"><a href="<%= `/events/${event._id}`%>"><h2><%= event.title %></h2></a>
+          <h5><%= event.location %></h5>
+          <h5>Start Date: <%= event.startDate.toISOString().slice(0, 10) %></h5>
+          <h5>End Date: <%= event.endDate.toISOString().slice(0, 10) %></h5>
+          <% if(event.isOnline){ %>
+            <h5>Is Online: Yes</h5>
+          <% } else{ %>  
+            <h5>Is Online: No</h5>
+         <% } %>
+          <a href="<%= event.registrationLink %>"><%= event.registrationLink %></a>
+          <div class="btn-group justify-content-center" role="group">
+              <div><a href="<%=`/events/${event._id}/register?_method=PUT` %>" class="button">Register</a></div>
+          </div>
+      </li>
+        
+  <% }); %>
+  </div>
+</section>
+

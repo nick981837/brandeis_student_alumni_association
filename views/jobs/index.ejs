@@ -1,0 +1,27 @@
+<section id="section-job">
+    <div id="section-title"><%=title%>:</div>
+    <div class="card">
+ <span id="section-subTitle-second">Students & Alumni of Brandeis University</span>
+    <p>Welcome to the Jobs page of the Students & Alumni Association website. Our goal is to help connect our members with valuable employment opportunities, and to provide resources and support for those seeking to launch or advance their careers.</p>
+    <div><a href="jobs/new" class="button">Post a new Job</a></div>
+    <br/>
+    <ul>
+    <% jobs.forEach(job => { %>
+        <li class="section-list"><a href="<%= `/jobs/${job._id}`%>"><h2><%= job.title %></h2></a>
+            <h5><%= job.company %>. <%= job.location %></h5>
+            <h5>$<%= job.salary %></h5>
+            <h5>Contact: <%= job.contactEmail %> | <%= job.contactPhone %></h5>
+            <h5>Post Date: <%= job.postDate.toISOString().slice(0, 10) %></h5>
+            <h5>Deadline Date: <%= job.deadlineDate.toISOString().slice(0, 10) %></h5>
+            <% if(job.isActive){ %>
+                <h5>Is Active: Yes</h5>
+              <% } else{ %>  
+                <h5>Is Active: No</h5>
+             <% } %>
+        </li>
+          
+    <% }); %>
+    </ul>
+    </div>
+</section>
+

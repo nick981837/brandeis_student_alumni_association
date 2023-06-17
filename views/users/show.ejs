@@ -1,0 +1,74 @@
+<section id="section-user">
+  <div id="user-form" class="card">
+<h1>User</h1>
+<table>
+  <tr>
+    <th>Name</th>
+    <td><%= user.name %></td>
+  </tr>
+  <tr>
+    <th>Email</th>
+    <td><%= user.email %></td>
+  </tr>
+  <tr>
+    <th>Password</th>
+    <td><%= user.password %></td>
+  </tr>
+  <tr>
+    <th>Api Token</th>
+    <td><%= user.apiToken %></td>
+  </tr>
+  <tr>
+    <th>Role</th>
+    <td><%= user.role %></td>
+  </tr>
+  <tr>
+    <th>Graduation Year</th>
+    <td><%= user.graduationYear %></td>
+  </tr>
+  <tr>
+    <th>Major</th>
+    <td><%= user.major %></td>
+  </tr>
+  <tr>
+    <th>Job</th>
+    <td><%= user.job %></td>
+  </tr>
+  <tr>
+    <th>Company</th>
+    <td><%= user.company %></td>
+  </tr>
+  <tr>
+    <th>City</th>
+    <td><%= user.city %></td>
+  </tr>
+  <tr>
+    <th>State</th>
+    <td><%= user.state %></td>
+  </tr>
+  <tr>
+    <th>Country</th>
+    <td><%= user.country %></td>
+  </tr>
+  <tr>
+    <th>Zip Code</th>
+    <td><%= user.zipCode %></td>
+  </tr>
+  <tr>
+    <th>Bio</th>
+    <td><%= user.bio %></td>
+  </tr>
+  <tr>
+    <th>Interests</th>
+    <td><%= user.interests %></td>
+  </tr>
+</table>
+
+
+<div class="btn-group justify-content-center" role="group">
+  <a href="/users" class="button">View all users</a>
+  <a href="<%=`/users/${user._id}/edit`%>" class="button">Edit</a>
+  <a href="<%= `/users/${user._id}/delete?_method=DELETE` %>" class="button" onclick="return confirm('Are you sure you want to delete this user?')">Delete</a>
+</div>
+</div>
+</section>

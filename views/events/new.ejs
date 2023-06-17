@@ -1,0 +1,59 @@
+<section id="section-event">
+    <form action="/events/create" method="POST" id="user-form" class="card">
+      <h1>Post a new Event</h1>
+      <label for="inputTitle">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="inputTitle"
+        placeholder="Title"
+        autofocus
+        required
+      />
+      <label for="inputLocation">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="inputLocation"
+        placeholder="Location"
+        required
+      />
+      <label for="inputStartDate">Start Date</label>
+      <input
+        type="date"
+        name="startDate"
+        id="inputStartDate"
+        required
+      />
+      <label for="inputEndDate">End Date</label>
+      <input
+        type="date"
+        name="endDate"
+        id="inputEndDate"
+        placeholder="End Date"
+        required
+      />
+      <label for="inputIsOnline">Is Online</label>
+      <select name="isOnline"> 
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+    </select>
+    <label for="inputRegistrationLink">Registration Link</label>
+      <input
+        type="text"
+        name="registrationLink"
+        id="inputRegistrationLink"
+        placeholder="Registration Link"
+      />
+      <label for="inputDescription">Description</label>
+      <textarea
+        type="text"
+        name="description"
+        id="inputDescription"
+        required
+      ></textarea>
+</br>
+<div class="justify-content-center"><input type="submit" value="Submit"></div>
+    </form>
+</section>
+  

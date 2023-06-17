@@ -1,0 +1,27 @@
+<section id="section-user">
+  <div id="user-form" class="card" style="width:auto">
+<h2>Users</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Major</th>
+      <th>Job</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% users.forEach(user => { %>
+    <tr>
+      <td><a href="<%= `/users/${user._id}`%>"><%= user.name %></a></td>
+      <td><%= user.email %></td>
+      <td><%= user.role %></td>
+      <td><%= user.major %></td>
+      <td><%= user.job %></td>
+    </tr>
+    <% }); %>
+  </tbody>
+</table>
+</div>
+</section>

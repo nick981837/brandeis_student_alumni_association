@@ -1,0 +1,123 @@
+<section id="section-index">
+    <form method="POST" action="<%=`/jobs/${job._id}/update?_method=PUT`%>" id="user-form" class="card">
+      <h2>Edit</h2>
+      <div class="row">
+        <div class="col-sm-4">
+      <label for="inputTitle">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="inputTitle"
+        placeholder="Title"
+        value="<%= job.title %>"
+        autofocus
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputComapny">Company</label>
+      <input
+        type="text"
+        name="company"
+        id="inputCompany"
+        value="<%= job.company %>"
+        placeholder="Company"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputLocation">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="inputLocation"
+        value="<%= job.location %>"
+        placeholder="Location"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputSalary">Salary</label>
+      <input
+        type="number"
+        name="salary"
+        id="inputSalary"
+        value="<%= job.salary %>"
+        placeholder="Salary"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputContactPhone">Contact Phone</label>
+      <input
+        type="text"
+        name="contactPhone"
+        value="<%= job.contactPhone %>"
+        id="inputContactPhone"
+        placeholder="Job"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputContactEmail">Contact Email</label>
+      <input
+        type="text"
+        name="contactEmail"
+        id="inputCompany"
+        value="<%= job.contactEmail %>"
+        placeholder="Company"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputPostDate">Post Date</label>
+      <input
+        type="date"
+        name="postDate"
+        value="<%= job.postDate.toISOString().slice(0, 10) %>"
+        id="inputPostDate"
+        placeholder="Post Date"
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputDeadlineDate">Deadline Date</label>
+      <input
+        type="date"
+        name="deadlineDate"
+        value="<%= job.deadlineDate.toISOString().slice(0, 10) %>"
+        id="inputDeadLineDate"
+        placeholder="Deadline Date"
+        required
+      />
+      </div>
+      <div class="col-sm-4">
+      <label for="inputIsActive">Is Active</label>
+    </br>
+      <select name="isActive">
+        <% if(job.isActive){ %>
+          <option value="true" selected="selected">Yes</option>
+        <option value="false">No</option>
+        <% } else{ %>  
+          <option value="true">Yes</option>
+        <option value="false" selected="selected">No</option>
+       <% } %>
+    </select>
+    </div>
+      <label for="inputDescription">Description</label>
+      <textarea
+        type="text"
+        name="description"
+        id="inputDescription"
+        required
+      ><%= job.description %></textarea>
+      <label for="inputRequirements">Requirements</label>
+      <textarea
+        type="text"
+        name="requirements"
+        id="inputRequirements"
+        required
+      ><%= job.requirements %></textarea>
+      </div>
+</br>
+<div class="justify-content-center"><input type="submit" value="Submit"></input></div>
+    </form>
+</div>
+</section>
+  
